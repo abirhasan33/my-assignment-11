@@ -1,0 +1,84 @@
+[
+    {
+        "brand":	"Apple ",
+        "phone_name":	"iPhone 13 mini",
+        "slug":	"apple_iphone_13_mini-11104",
+        "image":	"https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg",
+        "supplier_name": "Jhankar Mahabub",
+        "price": "90200",
+        "quantity": "3"
+    },
+    {
+        "brand":	"Oppo ",
+        "phone_name":	"Find X5",
+        "slug":	"oppo_find_x5-11378",
+        "image":	"https://fdn2.gsmarena.com/vv/bigpic/oppo-find-x5.jpg",
+        "supplier_name": "Mahathiir Gunjon",
+        "price": "60000",
+        "quantity": "2"
+    },
+    {
+        "brand":	"Samsung ",
+        "phone_name":	"Galaxy S22 5G",
+        "slug":	"samsung_galaxy_s22_5g-11253",
+        "image":	"https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-5g.jpg",
+        "supplier_name": "Abir Hasan",
+        "price": "70000",
+        "quantity": "2"
+    },
+    {
+        "brand":	"Apple ",
+        "phone_name":	"Watch Series 7 Aluminum",
+        "slug":	"apple_watch_series_7_aluminum-11107",
+        "image":	"https://fdn2.gsmarena.com/vv/bigpic/apple-watch-series-7-aluminum.jpg",
+        "supplier_name": "Zohirul Islam",
+        "price": "60000",
+        "quantity": "3"
+    },
+    {
+        "brand":	"Oppo ",
+        "phone_name":	"Pad",
+        "slug":	"oppo_pad-11322",
+        "image":	"https://fdn2.gsmarena.com/vv/bigpic/oppo-pad.jpg",
+        "supplier_name": "Zohirul Islam",
+        "price": "98000",
+        "quantity": "4"
+    },
+    {
+        "brand":	"Apple ",
+        "phone_name":	"iPad mini (2019)",
+        "slug":	"apple_ipad_mini_(2019)-9637",
+        "image":	"https://fdn2.gsmarena.com/vv/bigpic/apple-ipad-mini-2019.jpg",
+        "supplier_name": "Shnhrea Islam",
+        "price": "80000",
+        "quantity": "2"
+    },
+    {
+        "brand":	"Apple ",
+        "phone_name":	"Watch Series 5 Aluminum",
+        "slug":	"apple_watch_series_5_aluminum-9858",
+        "image":	"https://fdn2.gsmarena.com/vv/bigpic/apple-watch-aluminum-series-5.jpg",
+        "supplier_name": "Mr Khan",
+        "price": "67000",
+        "quantity": "2"
+    },
+    {
+        	
+        "brand":	"Oppo ",
+        "phone_name":	"Reno6 Lite",
+        "slug":	"oppo_reno6_lite-11196",
+        "image":	"https://fdn2.gsmarena.com/vv/bigpic/oppo-reno6-lite.jpg",
+        "supplier_name": "Bilgess miya",
+        "price": "50000",
+        "quantity": "1"
+    },
+    {
+        "brand":	"Samsung ",
+        "phone_name":	"Galaxy S22+ 5G",
+        "slug":	"samsung_galaxy_s22+_5g-11252",
+        "image":	"https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-plus-5g.jpg",
+        "supplier_name": "Bilgess miya",
+        "price": "65000",
+        "quantity": "2"
+    }
+]
