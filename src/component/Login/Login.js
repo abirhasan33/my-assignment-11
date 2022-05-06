@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
-// import SocialLogin from "../SocialLogin/SocialLogin";
+import Loading from "../Loading/Loading";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
@@ -84,11 +84,14 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  useEffect(() => {
-    if (user) {
-      navigate(from);
+  useEffect(()=> {
+      if(user){
+          navigate(from)
+      }
+  },[user])
+  if(loading || sending){
+      return <Loading></Loading>
     }
-  }, [user]);
 
   return (
     <div className="login-container">

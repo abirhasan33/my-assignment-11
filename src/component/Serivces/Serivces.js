@@ -11,7 +11,7 @@ const Serivces = () => {
     const [product, setproduct] = useState([]);
 
     useEffect(()=> {
-        fetch('product.json')
+        fetch('http://localhost:5000/service')
         .then(res => res.json())
         .then(data => setproduct(data));
     },[])
@@ -21,7 +21,7 @@ const Serivces = () => {
             <h1 id='service' className='serivces-titel my-5'>Product</h1>
             <div className='serivces-container container'>
             {
-                product.slice(0,6).map(serivce => (<Serivce key={serivce} serivce={serivce}></Serivce>))
+                product.slice(0,6).map(serivce => (<Serivce key={serivce._id} serivce={serivce}></Serivce>))
             }
             </div>
         </div>

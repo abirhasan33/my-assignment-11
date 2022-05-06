@@ -1,15 +1,14 @@
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import './Serivce.css';
+import { useNavigate } from 'react-router-dom';
 import './Service.css'
 
 const Serivce = ({serivce}) => {
-    const { image, id, phone_name, slug, brand, supplier_name, price, quantity} = serivce;
-    // console.log(serivce)
-    // const nevigate = useNavigate();
-    // const navigetToServiseDetail = id => {
-    //     nevigate(`/service/${id}`);
-    // }
+    const { image, _id, phone_name, slug, brand, supplier_name, price, quantity} = serivce;
+    console.log(serivce)
+    const nevigate = useNavigate();
+    const navigetToServiseDetail = id => {
+        nevigate(`/inventory/${id}`);
+    }
     return (
         <div className='serivces'>
             <img className='images' src={image} alt="" />
@@ -19,8 +18,7 @@ const Serivce = ({serivce}) => {
             <p className='phone mb-1'>quantity: {quantity}</p>
             <p className='phone mb-1'>brand: {brand}</p>
             <p className='phone mb-1'>supplierName: {supplier_name}</p>
-            <button className='button w-75 mt-3'>Update</button>
-            {/* <button onClick={()=>navigetToServiseDetail(id)} className='button'>Booknow: {name}</button> */}
+            <button className='button w-75 mt-3' onClick={()=>navigetToServiseDetail(_id)}>Update</button>
         </div>
     );
 };
