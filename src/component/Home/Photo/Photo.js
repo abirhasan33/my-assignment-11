@@ -12,7 +12,7 @@ const Photo = () => {
     return (
         <>
         <h1 className='serivces-titel my-5'> Phone choose now</h1>
-        <div className='serivces-cukout'>
+        <div className='serivces-cukout mp-5'>
             {
                 serivces.map(serivces => <PhotoDelels key={serivces} serivces={serivces}></PhotoDelels>)
             }

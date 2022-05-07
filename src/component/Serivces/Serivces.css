@@ -25,3 +25,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+.btn-button{
+    border-radius: 15px 0 15px 0;
+    border: 2px solid blue;
+}

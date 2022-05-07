@@ -4,7 +4,7 @@ import './About.css';
 
 const About = () => {
     return (
-        <div className='abir'>
+        <div className='abir pb-5'>
             <div className='coniternae-div'>
             <div className='imagess container mt-5'>
                 <img className='img' src={abir} alt="" />
@@ -16,7 +16,7 @@ const About = () => {
                     I have beautiful photographer || I have been travleing from Photographer from 2014 to 2022 .
                 </h6>
                 <p className='py-3'>NYC has many gorgeous locations that offer our photographers discreet places to hide themselves and capture your diamond moment. Some proposal location ideas include: Central Park. Empire State Building. The High Line. Times Square. A Romantic Rooftop. Times Square. If you’re interested in secret proposal photography, NYC grooms typically ...</p>
-            <Link to='/home'><button className='button px-5 py-2 mb-4'>My Products</button></Link>
+            <Link to='/home'><button className='button px-5 py-2 mb-5'>My Products</button></Link>
             </div>
         </div>
         </div>

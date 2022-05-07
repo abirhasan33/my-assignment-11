@@ -17,9 +17,31 @@ const Inventory = () => {
     }, [])
     console.log(service);
     return (
-        <div>
-            <h1>Inventory ({service.brand})</h1>
-        </div>
+        <div class="row container mt-5">
+  <div class="col-sm-6">
+    <div class="card border-0">
+      <div class="card-body mx-auto mt-5">
+          <img src={service.image} alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card border-0">
+      <div class="card-body login-form">
+      <h4 className='name'>{service.phone_name}</h4>
+            <p className='p pt-1'>Model: {service.slug}</p>
+            <p className='phone mb-1'>price: {service.price}</p>
+            <p className='phone mb-1'>quantity: {service.quantity}</p>
+            <p className='phone mb-1'>brand: {service.brand}</p>
+            <p className='phone mb-1'>supplierName: {service.supplier_name}</p>
+            <button className='button px-5 py-1 mt-3'>Deleveryed</button>
+            <br />
+            <input className='mt-4 px-1 btn-button' type="text" placeholder='Pleace add Quantity'/>
+            <button className='button px-5 py-1 mx-4 '>Updet Quantity</button>
+      </div>
+    </div>
+  </div>
+</div>
     );
 };
 
