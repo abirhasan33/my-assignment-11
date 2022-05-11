@@ -7,7 +7,8 @@ import auth from '../../Firebase/Firebase.init';
 import MyItemsDFetelis from './MyItemsDFetelis';
 
 const MyItems = () => {
-    
+    const [user] = useAuthState(auth);
+    const [order, setOrder] = useState([]);
 
     const navigate = useNavigate();
 
