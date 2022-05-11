@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MyItemsDFetelis = ({order, handleDelete}) => {
-    const { image, phone_name, slug, brand, supplier_name, price, quantity} = order;
+    const { image, phone_name, supplier_name, price, quantity} = order;
     console.log(order);
 
     
