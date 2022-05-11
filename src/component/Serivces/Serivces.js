@@ -11,7 +11,7 @@ const Serivces = () => {
     const [product, setproduct] = useState([]);
 
     useEffect(()=> {
-        fetch('http://localhost:5000/service')
+        fetch('https://sleepy-oasis-79633.herokuapp.com/service')
         .then(res => res.json())
         .then(data => setproduct(data));
     },[])

@@ -5,8 +5,6 @@ import Photo from './Photo/Photo';
 import ReactPlayer from 'react-player'
 
 const Home = () => {
-    // const videoSrc = Car;
-    // const poster = "https://www.youtube.com/embed/8wyoi6zG85Y" 
     return (
         <div>
             <Banar></Banar>

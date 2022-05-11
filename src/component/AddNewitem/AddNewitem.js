@@ -18,7 +18,7 @@ const handelform = event =>{
 
     const Addproduct={email,brand,phone_name,quantity,supplier_name,image,price};
 
-    const url = `http://localhost:5000/addnewitem`;
+    const url = `https://sleepy-oasis-79633.herokuapp.com/addnewitem`;
         console.log(url);
         fetch(url, {
             method: 'POST',

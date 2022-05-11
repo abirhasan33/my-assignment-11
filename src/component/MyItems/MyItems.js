@@ -14,7 +14,7 @@ const MyItems = () => {
 
     useEffect(() => {
         const email = user?.email;
-        const url= `http://localhost:5000/order?email=${email}`
+        const url= `https://sleepy-oasis-79633.herokuapp.com/order?email=${email}`
 
         try {
             fetch(url, {
@@ -44,7 +44,7 @@ const MyItems = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure?');
         if(proceed){
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://sleepy-oasis-79633.herokuapp.com/order/${id}`;
             console.log(url);
             fetch(url, {
                 method: 'DELETE'
