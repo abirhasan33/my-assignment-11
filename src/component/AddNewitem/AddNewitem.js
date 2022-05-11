@@ -64,7 +64,7 @@ const handelform = event =>{
         <button className='addProduct-btn button'>Add Product</button>
       </form>
                 </div>
-                
+                <div className='col-md-3'></div>
             </div>
         </div>
     );
