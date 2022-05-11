@@ -9,9 +9,10 @@ import Heder from './component/Heder/Heder';
 import Home from './component/Home/Home';
 import Inventory from './component/Inventory/Inventory';
 import Login from './component/Login/Login';
+import MyItems from './component/MyItems/MyItems';
 import NotFound from './component/NotFound/NotFound';
 import Register from './component/Register/Register';
-import PrivateRoute from './PrivateRoute/PrivateRoute ';
+import RequireAuth from './component/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -25,15 +26,18 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/inventory/:serviceId' element={<PrivateRoute>
+        <Route path='/inventory/:serviceId' element={<RequireAuth>
           <Inventory></Inventory>
-        </PrivateRoute>}></Route>
-        <Route path='/allinventory' element={<PrivateRoute>
+          </RequireAuth>}></Route>
+        <Route path='/allinventory' element={<RequireAuth>
           <AllInventory></AllInventory>
-        </PrivateRoute>}></Route>
-        <Route path='/addnewitem' element={<PrivateRoute>
+          </RequireAuth>}></Route>
+        <Route path='/addnewitem' element={<RequireAuth>
           <AddNewitem></AddNewitem>
-        </PrivateRoute>}></Route>
+          </RequireAuth>}></Route>
+        <Route path='/myitems' element={<RequireAuth>
+          <MyItems></MyItems>
+          </RequireAuth>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

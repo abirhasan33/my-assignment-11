@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import auth from "../../Firebase/Firebase.init";
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import '../../styles/Login.css'
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../Loading/Loading";
+import axios from "axios";
 
 const Login = () => {
+
+  const [user] = useAuthState(auth);
+
+
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -20,7 +25,7 @@ const Login = () => {
     general: "",
   });
 
-  const [signInWithEmailAndPassword, user, loading, hookError] =
+  const [signInWithEmailAndPassword, loading, hookError] =
     useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
@@ -60,26 +65,17 @@ const Login = () => {
         toast('pleace enter your email address')
       }
   }
-  const handleLogin = (e) => {
+  const handleLogin = async(e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(userInfo.email, userInfo.password);
+    const email = userInfo.email;
+    const password = userInfo.password;
+    await signInWithEmailAndPassword(email, password);
+    const {data} = await axios.post('http://localhost:5000/login', {email});
+    localStorage.setItem('accessToken', data.accessToken);
+    navigate(from, { replace: true });
   };
 
 
-  useEffect(() => {
-    if (hookError) {
-      switch (hookError?.code) {
-        case "auth/invalid-email":
-          toast("invalid-email-verified");
-          break;
-        case "auth/invvalid-password":
-          toast("Wroing password. Intruder!!");
-          break;
-        default:
-          toast("something went wrong");
-      }
-    }
-  }, [hookError]);
 
   const navigate = useNavigate();
   const location = useLocation();

@@ -3,7 +3,6 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../Firebase/Firebase.init';
 import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';

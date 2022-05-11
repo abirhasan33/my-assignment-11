@@ -1,20 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import useServiceDetail from '../Hooks/useServiceDetail';
+
 
 const Inventory = () => {
     const {serviceId} = useParams();
-    // const [service] = useServiceDetail(serviceId)
     const [service, setService] = useState({});
+
+    const [quantityUpodet, setQuantityUodet] = useState();
 
     useEffect( () =>{
         const url = `http://localhost:5000/service/${serviceId}`;
         console.log(url);
         fetch(url)
         .then(res=> res.json())
-        .then(data => setService(data))
+        .then(data => {
+            setService(data)
+            console.log(data);
+            setQuantityUodet(data.quantity);
+        })
 
     }, [])
+
+    const quantityUpdete = ()=>{
+        const quantity = parseInt(quantityUpodet);
+        const url = `http://localhost:5000/service/${serviceId}`
+        fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify({
+        quantity
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+     console.log(data);
+     setQuantityUodet(quantity - 1);
+  });
+        
+    };
+
+    const numberRef = useRef()
+    const quantityAdd = (e)=> {
+        const quantityInputValue = numberRef.current.value;
+        const result = Number(quantityInputValue) + Number(quantityUpodet);
+        setQuantityUodet(result);
+    }
+
+
+
     console.log(service);
     return (
         <div class="row container mt-5">
@@ -31,13 +66,13 @@ const Inventory = () => {
       <h4 className='name'>{service.phone_name}</h4>
             <p className='p pt-1'>Model: {service.slug}</p>
             <p className='phone mb-1'>price: {service.price}</p>
-            <p className='phone mb-1'>quantity: {service.quantity}</p>
+            <p className='phone mb-1'>quantity: {quantityUpodet}</p>
             <p className='phone mb-1'>brand: {service.brand}</p>
             <p className='phone mb-1'>supplierName: {service.supplier_name}</p>
-            <button className='button px-5 py-1 mt-3'>Deleveryed</button>
+            <buttono onClick={quantityUpdete} className='button px-5 py-1 mt-2'>Delivered</buttono>
             <br />
-            <input className='mt-4 px-1 btn-button' type="text" placeholder='Pleace add Quantity'/>
-            <button className='button px-5 py-1 mx-4 '>Updet Quantity</button>
+            <input className='mt-3 px-1 btn-button' type="text" ref={numberRef} placeholder='Pleace add Quantity'/>
+            <button onClick={quantityAdd} className='button px-5 py-1 mx-4'>Updet Quantity</button>
       </div>
     </div>
   </div>

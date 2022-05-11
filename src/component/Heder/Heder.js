@@ -30,12 +30,13 @@ const Heder = () => {
             </Nav>
             <Nav className="customlink">
               <Nav.Link as={Link} to="/home">Home</Nav.Link>
-              <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
+              <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
               {
                 user && <>
                 <Nav.Link as={Link} to="/allinventory">All Inventory</Nav.Link>
                 <Nav.Link as={Link} to="/addnewitem">Add New item</Nav.Link>
+                <Nav.Link as={Link} to="/myitems">My Items</Nav.Link>
                 </>
               }
               {
