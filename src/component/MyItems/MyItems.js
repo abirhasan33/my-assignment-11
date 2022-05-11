@@ -62,9 +62,7 @@ const MyItems = () => {
         <div>
             <h1 id='service' className='serivces-titel my-3'>My Items {order.length}</h1>
             <div className='serivces-container container'>
-            {
-                order.map(order=> (<MyItemsDFetelis handleDelete={handleDelete} key={order._id} order={order}></MyItemsDFetelis>))
-            }
+            
         </div>
         </div>
     );
